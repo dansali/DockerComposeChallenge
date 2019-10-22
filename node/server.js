@@ -52,14 +52,16 @@ app.get('/', (req, res) => {
 					count++;
 					output += '<tr><td>'+row['username']+'</td><td>'+row['name']+'</td><td>'+row['country']+'</td></tr>\n';
 				});
-				if (count > 0)
+
+				if (count > 0) {
 					res.send(htmlTemplate(output));
-				else
+				} else {
 					res.send(htmlTemplate('<tr>Nothing found :(</tr>'));
+				}
 			}
 		});
 
-		// Close DB
+		// Close DB connection
 		db.close();
 	}); 
 });
@@ -74,13 +76,15 @@ app.get('/data', (req, res) => {
 		// Select db, find all users and return data as JSON
 		var dbo = db.db('website');
 		dbo.collection('users').find({}).toArray(function(err, result) {
-			if (err)
+			if (err) {
+				// send error if exists
 				res.send(err);
-			else
-				res.send(JSON.stringify(result));
+			} else {
+				res.json(JSON.stringify(result));
+			}
 		});
 
-		// Close DB
+		// Close DB connection
 		db.close();
 	}); 
 });
