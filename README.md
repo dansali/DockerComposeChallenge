@@ -51,7 +51,7 @@ Raw data: http://localhost:8080/data
 
 ### Known bugs
 
-First startup of the docker containers will result in adminMongo connecting too soon :(
+First startup of the docker containers will result in adminMongo connecting too soon. MongoDB restarts after initialisation, this affects the depends-on feature in the composer.
 You may need to run:
 ``
 $ docker-compose restart mongodbadmin
