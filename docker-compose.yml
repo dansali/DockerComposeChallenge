@@ -1,4 +1,4 @@
-version: "3.2"
+version: "3.7"
 services:
   # Reverse proxy webserver
   nginx:
@@ -28,15 +28,6 @@ services:
     volumes:
       - data-volume:/data/db
       - ./init-setup.js:/docker-entrypoint-initdb.d/init-setup.js:ro
-#  mongodb-seed:
-#    image: mongo
-#    volumes:
-#      - ./default_data.json:/data.json
-#    command: mongoimport --host mongodb --port 27017 --username root --password weakpassword --db website --collection Users --type json --file /data.json --jsonArray
-#    depends_on:
-#      - mongodb
-#    networks:
-#       - database
   # Node application (access via nginx)
   nodeapp:
     image: node
