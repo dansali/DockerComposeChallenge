@@ -22,8 +22,21 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: weakpassword
+      MONGO_INITDB_DATABASE: website
     networks:
       - database
+    volumes:
+      - data-volume:/data/db
+      - ./init-setup.js:/docker-entrypoint-initdb.d/init-setup.js:ro
+#  mongodb-seed:
+#    image: mongo
+#    volumes:
+#      - ./default_data.json:/data.json
+#    command: mongoimport --host mongodb --port 27017 --username root --password weakpassword --db website --collection Users --type json --file /data.json --jsonArray
+#    depends_on:
+#      - mongodb
+#    networks:
+#       - database
   # Node application (access via nginx)
   nodeapp:
     image: node
@@ -36,11 +49,11 @@ services:
       - backend
       - database
   # Database admin panel
-  mongodb-admin:
+  mongodbadmin:
     image: mrvautin/adminmongo
     restart: always
     environment:
-      - CONN_NAME=mongodb
+      - CONN_NAME=website
       - DB_HOST=mongodb
       - DB_USERNAME=root
       - DB_PASSWORD=weakpassword
@@ -59,3 +72,7 @@ networks:
   frontend:
   backend:
   database:
+
+# Volumes for mongodb
+volumes:
+  data-volume:
