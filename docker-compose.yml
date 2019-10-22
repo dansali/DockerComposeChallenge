@@ -10,10 +10,9 @@ services:
       # Only nginx will have frontend accessibility
       - frontend
       - backend
-    links:
-      - mongodb-admin
     ports:
       - "8080:80"
+      - "8081:81"
   # Database server
   mongodb:
     image: mongo
@@ -43,8 +42,6 @@ services:
       - DB_PASSWORD=weakpassword
       - DB_PORT=27017
       - HOST=0.0.0.0
-    ports:
-      - "8082:1234"
     links:
       - mongodb
     depends_on:
