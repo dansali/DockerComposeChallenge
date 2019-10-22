@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 	        } else {
 	        	// Nice HTML formatting to loop through each entry in the array
 	        	// Prints out username, name and country.
-	            var output = "<html><body><h1>Data from Users collection on MongoDB</h1>";
+	            var output = "<html><body><title>DockerComposeChallenge - Dan Sali - NodeJS</title><h1>Data from Users collection on MongoDB</h1>";
 	            output += "<table><tr><th>Username</th><th>Name</th><th>Country</th></tr>";
 	            result.forEach(function(row) {
 	            	output += "<tr><td>"+row['username']+"</td><td>"+row['name']+"</td><td>"+row['country']+"</td></tr>";
