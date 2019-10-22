@@ -3,10 +3,10 @@
 ### Summary
 
 This repository consists of 4 docker-compose services:
-* nginx (All HTTP communication)
-* node application (Accessible via nginx port 8080)
-* adminMongodb (Accessible via nginx port 8081)
-* mongodb
+* Nginx web server
+* NodeJS app server
+* AdminMongoDB server
+* MongoDB server
 
 ### Requirements:
 
