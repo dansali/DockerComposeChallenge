@@ -1,3 +1,4 @@
+# Latest and greatest version :)
 version: "3.7"
 services:
   # Reverse proxy webserver
@@ -27,6 +28,7 @@ services:
       - database
     volumes:
       - data-volume:/data/db
+      # Insert generic data for initialisation
       - ./init-setup.js:/docker-entrypoint-initdb.d/init-setup.js:ro
   # Node application (access via nginx)
   nodeapp:
@@ -64,6 +66,6 @@ networks:
   backend:
   database:
 
-# Volumes for mongodb
+# Persistent volumes
 volumes:
   data-volume:
