@@ -8,6 +8,8 @@ Requirements:
 
 * Docker
 * Docker compose
+* Node
+* NPM
 * Suggested OS: Linux/Mac
 
 ### Execution

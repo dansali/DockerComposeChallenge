@@ -11,7 +11,7 @@ db.createUser(
     }
 );
 
-db.Users.insert([
+db.users.insert([
 {
     "_id": "5daef15f0f51b35a88d3f94f",
     "username": "admin",
