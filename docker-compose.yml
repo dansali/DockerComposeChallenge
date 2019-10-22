@@ -11,7 +11,9 @@ services:
       - frontend
       - backend
     ports:
+      # App
       - "8080:80"
+      # Admin mongodb
       - "8081:81"
   # Database server
   mongodb:
@@ -20,17 +22,19 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: weakpassword
-    ports:
-      - "27017:27017"
+    networks:
+      - database
+  # Node application (access via nginx)
+  nodeapp:
+    image: node
+    restart: always
+    command: bash -c "npm install && npm start"
+    volumes:
+      - ./node:/usr/app
+    working_dir: /usr/app
     networks:
       - backend
-  # Node application (access via nginx)
-#  node:
-#    image: node
-#    volumes:
-#      - ./node:/
-#    networks:
-#      - backend
+      - database
   # Database admin panel
   mongodb-admin:
     image: mrvautin/adminmongo
@@ -48,8 +52,10 @@ services:
       - mongodb
     networks:
       - backend
+      - database
 
 # Network configuration
 networks:
   frontend:
   backend:
+  database:
