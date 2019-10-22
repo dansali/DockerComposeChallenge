@@ -67,5 +67,5 @@ $ docker-compose restart mongodbadmin
 ### Screenshots
 
 ![Screenshot 1](https://i.imgur.com/3TD9PkR.png "Screenshot 1")
-![Screenshot 2](https://i.imgur.com/3VXgaO3.png "Screenshot 2")
+![Screenshot 2](https://i.imgur.com/bW2scT2.png "Screenshot 2")
 ![Screenshot 3](https://i.imgur.com/jqQ9Wgu.png "Screenshot 3")
