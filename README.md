@@ -2,7 +2,7 @@
 
 ### Summary
 
-This repo consists of 4 docker-compose services:
+This repository consists of 4 docker-compose services:
 * nginx (All HTTP communication)
 * node application (Accessible via nginx port 8080)
 * adminMongodb (Accessible via nginx port 8081)
@@ -18,7 +18,7 @@ This repo consists of 4 docker-compose services:
 
 ### Installation
 
-1) Clone repository
+1) Clone repository:
 
 ```
 $ git clone https://github.com/dansali/DockerComposeChallenge.git
