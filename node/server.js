@@ -80,7 +80,7 @@ app.get('/data', (req, res) => {
 				// send error if exists
 				res.send(err);
 			} else {
-				res.json(JSON.stringify(result));
+				res.json(result);
 			}
 		});
 
