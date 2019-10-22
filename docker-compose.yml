@@ -1,0 +1,26 @@
+version: "3.2"
+services:
+  # Reverse proxy webserver
+  nginx:
+    build: "./nginx"
+    networks:
+      # Only nginx will have frontend accessibility
+      - frontend
+      - backend
+    ports:
+      - "8080:80"
+  # Database server
+  mongodb:
+    build: "./monogodb"
+    networks:
+      - backend
+  # Node application (access via nginx)
+  node:
+    build: "./node"
+    networks:
+      - backend
+  # Database admin panel
+  mongodb-admin:
+    build: "./mongodb-admin"
+    networks:
+      - backend
