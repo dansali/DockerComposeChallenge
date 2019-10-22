@@ -33,13 +33,9 @@ $ docker-compose up -d
 ```
 $ docker-compose restart mongodbadmin
 ```
-4) Visit application:
+4) Visit application: http://localhost:8080
 
-http://localhost:8080
-
-5) Visit mongodb admin panel:
-
-http://localhost:8081
+5) Visit mongodb admin panel: http://localhost:8081
 
 ### Execution
 
