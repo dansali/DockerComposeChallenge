@@ -34,6 +34,7 @@ $ docker-compose up -d
 $ docker-compose restart mongodbadmin
 ```
 4) Visit application: http://localhost:8080
+Raw data: http://localhost:8080/data
 
 5) Visit mongodb admin panel: http://localhost:8081
 
@@ -62,3 +63,9 @@ $ docker-compose restart mongodbadmin
 * docker-compose version 1.24.1, build 4667896b
 * NodeJS (Dependencies: express and mongodb)
 * Nginx, MongoDB, AdminMongoDB
+
+### Screenshots
+
+![Screenshot 1](https://i.imgur.com/3TD9PkR.png "Screenshot 1")
+![Screenshot 2](https://i.imgur.com/3VXgaO3.png "Screenshot 2")
+![Screenshot 3](https://i.imgur.com/jqQ9Wgu.png "Screenshot 3")
