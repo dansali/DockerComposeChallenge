@@ -8,7 +8,7 @@ This repository consists of 4 docker-compose services:
 * AdminMongoDB server
 * MongoDB server
 
-### Requirements:
+### Requirements
 
 * Docker 18.06.0+
 * Docker composer
